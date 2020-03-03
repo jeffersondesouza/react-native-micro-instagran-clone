@@ -19,6 +19,11 @@ const style = StyleSheet.create({
     paddingLeft: 10,
     textAlign: "center",
     fontSize: 20
+  },
+  errorMessage: {
+    color: "red",
+    textAlign: "center",
+    marginTop: 10
   }
 });
 
