@@ -6,8 +6,8 @@ const login = async ({ userName, password }) => {
   });
 
   if (res.ok) {
-    const token = await res.json();
-    console.warn('token:', token)
+    const token = await res.headers.get("x-access-token");
+    return token;
   } else {
     throw new Error("Não foi possível logar");
   }
