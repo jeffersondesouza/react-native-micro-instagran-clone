@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { View, Text, TextInput, Button, Platform } from "react-native";
 import AsyncStorage from "@react-native-community/async-storage";
 
@@ -10,6 +10,7 @@ const Login = ({ navigation }) => {
   const [password, setPassword] = useState("123456");
   const [messagemErro, setMessagemErro] = useState("");
 
+
   const handleLogin = async data => {
     if (!userName || !password) {
       return;
@@ -19,7 +20,7 @@ const Login = ({ navigation }) => {
       const token = await login({ userName, password });
       await AsyncStorage.setItem("intluta_token", token);
       setMessagemErro("");
-      navigation.push("Feed");
+      navigation.replace("Feed", { name: userName });
     } catch (error) {
       setMessagemErro(error.message);
     }
@@ -48,16 +49,5 @@ const Login = ({ navigation }) => {
   );
 };
 
-Login.navigationOptions = () => {
-  const options = {
-    title: "Logins"
-  };
-
-  if (Platform.OS === "android") {
-    options.header = null;
-  }
-
-  return options;
-};
-
+console.log("navigation:", Login.navigationOptions);
 export default Login;

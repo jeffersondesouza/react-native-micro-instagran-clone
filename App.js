@@ -11,8 +11,13 @@ import { Feed, Login } from "./src/views";
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import { View, Text } from "react-native";
 
 const Stack = createStackNavigator();
+
+const FeedHeader = props => {
+  return <Text>Olá {props.params.name}</Text>;
+};
 
 const App = () => {
   return (
@@ -26,7 +31,9 @@ const App = () => {
         <Stack.Screen
           name="Feed"
           component={Feed}
-          options={{ headerShown: false }}
+          options={({ route }) => ({
+            headerTitle: () => <FeedHeader {...route} />
+          })}
         />
       </Stack.Navigator>
     </NavigationContainer>
