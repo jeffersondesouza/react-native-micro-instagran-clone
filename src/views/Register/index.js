@@ -6,7 +6,7 @@ import style from "./style";
 import login from "../../api/login";
 import { TouchableOpacity } from "react-native";
 
-const Login = ({ navigation }) => {
+const Register = ({ navigation }) => {
   const [userName, setUser] = useState("");
   const [password, setPassword] = useState("");
   const [messagemErro, setMessagemErro] = useState("");
@@ -49,13 +49,12 @@ const Login = ({ navigation }) => {
         />
         <Text style={style.errorMessage}>{messagemErro}</Text>
       </View>
-      <Button title="Entrar" onPress={handleLogin} />
+      <Button title="Registar" onPress={handleLogin} />
       <TouchableOpacity style={style.forgetPassword} onPress={handleGoToRegister}>
-        <Text style={style.forgetPasswordText}>Cadastrar</Text>
+        <Text style={style.forgetPasswordText}>Voltar para login</Text>
       </TouchableOpacity>
     </View>
   );
 };
 
-console.log("navigation:", Login.navigationOptions);
-export default Login;
+export default Register;

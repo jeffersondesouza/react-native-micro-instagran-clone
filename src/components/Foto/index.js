@@ -58,21 +58,6 @@ const Foto = ({ description, comentarios, userURL, url, likes }) => {
           <Comment userName={item.userName} text={item.text} date={item.date} />
         )}
       />
-      <View style={style.commentInputField}>
-        <TextInput
-          multiline={true}
-          value={commentText}
-          onChangeText={handleChangeComment}
-          style={style.commentInput}
-          placeholder="Deixe seu comentário"
-        />
-        <TouchableOpacity onPress={handleSendComment}>
-          <Image
-            style={style.commentSend}
-            source={require("../../../res/img/send.png")}
-          />
-        </TouchableOpacity>
-      </View>
     </View>
   );
 };

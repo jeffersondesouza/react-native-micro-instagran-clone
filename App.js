@@ -7,7 +7,7 @@
  */
 
 import React from "react";
-import { Feed, Login } from "./src/views";
+import { Feed, Login, Register } from "./src/views";
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -15,8 +15,8 @@ import { View, Text } from "react-native";
 
 const Stack = createStackNavigator();
 
-const FeedHeader = props => {
-  return <Text>Olá {props.params.name}</Text>;
+const FeedHeader = (props) => {
+  return <Text>Omn Locker</Text>;
 };
 
 const App = () => {
@@ -29,10 +29,16 @@ const App = () => {
           options={{ headerShown: false }}
         />
         <Stack.Screen
+          name="Register"
+          component={Register}
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Screen
           name="Feed"
           component={Feed}
           options={({ route }) => ({
-            headerTitle: () => <FeedHeader {...route} />
+            headerTitle: () => <FeedHeader {...route} />,
           })}
         />
       </Stack.Navigator>

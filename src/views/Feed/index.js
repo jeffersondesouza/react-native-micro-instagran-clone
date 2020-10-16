@@ -1,4 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
+import { View } from "react-native";
 import { ScrollView, FlatList, Text, Platform, StatusBar } from "react-native";
 import { Cabecalho, Foto } from "../../components";
 
@@ -8,7 +9,7 @@ const Feed = () => {
 
   useEffect(() => {
     const loadFotos = async () => {
-      const res = await fetch("http://10.0.2.2:3030/feed");
+      const res = await fetch("https://jsonplaceholder.typicode.com/todos");
       const fotosData = await res.json();
       setFotos(fotosData);
     };
@@ -26,7 +27,7 @@ const Feed = () => {
           renderItem={({ item }) => (
             <>
               <Cabecalho {...item} />
-              <Foto {...item} />
+              {/* <Foto {...item} /> */}
             </>
           )}
         />
