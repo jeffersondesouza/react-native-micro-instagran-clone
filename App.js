@@ -7,11 +7,11 @@
  */
 
 import React from "react";
-import { Feed, Login, Register } from "./src/views";
-
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { View, Text } from "react-native";
+import { Feed, Login, Register } from "./src/views";
+import SingIn from "./src/views/SingIn";
 
 const Stack = createStackNavigator();
 
@@ -24,8 +24,8 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="Login"
-          component={Login}
+          name="SingIn"
+          component={SingIn}
           options={{ headerShown: false }}
         />
         <Stack.Screen
