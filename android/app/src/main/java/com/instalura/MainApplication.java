@@ -1,4 +1,4 @@
-package com.OmnLocker;
+package com.OmniLocker;
 
 import android.app.Application;
 import android.util.Log;
