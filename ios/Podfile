@@ -1,8 +1,8 @@
 platform :ios, '9.0'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
-target 'instalura' do
-  # Pods for instalura
+target 'OmnLocker' do
+  # Pods for OmnLocker
   pod 'React', :path => '../node_modules/react-native/'
   pod 'React-Core', :path => '../node_modules/react-native/React'
   pod 'React-DevSupport', :path => '../node_modules/react-native/React'
@@ -28,7 +28,7 @@ target 'instalura' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  target 'instaluraTests' do
+  target 'OmnLockerTests' do
     inherit! :search_paths
     # Pods for testing
   end
@@ -36,10 +36,10 @@ target 'instalura' do
   use_native_modules!
 end
 
-target 'instalura-tvOS' do
-  # Pods for instalura-tvOS
+target 'OmnLocker-tvOS' do
+  # Pods for OmnLocker-tvOS
 
-  target 'instalura-tvOSTests' do
+  target 'OmnLocker-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end

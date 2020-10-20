@@ -1,4 +1,4 @@
-package com.instalura;
+package com.OmnLocker;
 
 import android.app.Application;
 import android.util.Log;
