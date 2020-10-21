@@ -11,15 +11,10 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { View, Text } from "react-native";
 import { Provider as PaperProvider  } from "react-native-paper";
-import { Feed, Login, Register } from "./src/views";
 import theme from "./src/styles/theme";
-import SingIn from "./src/views/SingIn";
+import { SingIn } from "./src/views/pages";
 
 const Stack = createStackNavigator();
-
-const FeedHeader = (props) => {
-  return <Text>Omn Locker</Text>;
-};
 
 const App = () => {
   return (
@@ -30,19 +25,6 @@ const App = () => {
             name="SingIn"
             component={SingIn}
             options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="Register"
-            component={Register}
-            options={{ headerShown: false }}
-          />
-
-          <Stack.Screen
-            name="Feed"
-            component={Feed}
-            options={({ route }) => ({
-              headerTitle: () => <FeedHeader {...route} />,
-            })}
           />
         </Stack.Navigator>
       </NavigationContainer>
