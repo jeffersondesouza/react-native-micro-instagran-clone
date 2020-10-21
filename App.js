@@ -12,7 +12,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { View, Text } from "react-native";
 import { Provider as PaperProvider  } from "react-native-paper";
 import theme from "./src/styles/theme";
-import { SingIn } from "./src/views/pages";
+import { SingIn } from "./src/view/pages";
 
 const Stack = createStackNavigator();
 
