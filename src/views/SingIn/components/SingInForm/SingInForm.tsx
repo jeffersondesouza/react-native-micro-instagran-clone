@@ -1,38 +1,47 @@
-import React from "react";
-import { Text, StyleSheet, View, TextInput } from "react-native";
+import React, { useState } from "react";
+import { Text, StyleSheet, View } from "react-native";
+import { TextInput, Button } from "react-native-paper";
 
 const style = StyleSheet.create({
-  root: {
-  },
+  root: {},
+  input: {
+    marginBottom: 25,
+  }
 });
 
-
 const SingInForm = () => {
+  const [formValue, setFormValue] = useState({ email: "", password: "" });
 
-  const handleChange = (name:string) => (value:string) =>{
-    console.log({name, value})
+  const handleChange = (name: string) => (value: string) => {
+    console.log({ name, value });
+    setFormValue((form) => ({
+      ...form,
+      [name]: value,
+    }));
   };
+
+  const handleLogin =()=>{
+    console.log(formValue)
+  }
 
   return (
     <View style={style.root}>
       <TextInput
-        placeholder="Email"
+        mode="outlined"
+        label="Email"
         style={style.input}
-        onChangeText={handleChange('email')}
+        value={formValue.email}
+        onChangeText={handleChange("email")}
       />
-       <TextInput
-        type="password"
-        placeholder="Senha"
+      <TextInput
+        secureTextEntry
+        mode="outlined"
+        label="Senha"
         style={style.input}
-        onChangeText={handleChange('password')}
+        value={formValue.password}
+        onChangeText={handleChange("password")}
       />
-{/*       <TextInput
-        placeholder="Senha"
-        secureTextEntry={true}
-        style={style.input}
-        value={password}
-        onChangeText={(value) => setPassword(value)}
-      /> */}
+      <Button mode="contained" onPress={handleLogin}>Entrar</Button>
     </View>
   );
 };

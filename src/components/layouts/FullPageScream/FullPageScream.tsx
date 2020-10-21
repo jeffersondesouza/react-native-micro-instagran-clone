@@ -5,7 +5,9 @@ import { StyleSheet, View } from "react-native";
 const style = StyleSheet.create({
   root: {
     height: '100%',
-    backgroundColor:'red',
+    paddingLeft: 16,
+    paddingRight: 16,
+    backgroundColor:'white',
   },
 });
 
