@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import { Text, StyleSheet, View } from "react-native";
-import { TextInput, Button } from "react-native-paper";
+import { TextInput, Button ,Switch} from "react-native-paper";
 
 const style = StyleSheet.create({
   root: {},
   input: {
     marginBottom: 25,
+  },
+  submitButton: {
+    paddingTop: 7,
+    paddingBottom: 7,
   }
 });
 
@@ -41,7 +45,7 @@ const SingInForm = () => {
         value={formValue.password}
         onChangeText={handleChange("password")}
       />
-      <Button mode="contained" onPress={handleLogin}>Entrar</Button>
+      <Button style={style.submitButton} mode="contained" onPress={handleLogin}>Entrar</Button>
     </View>
   );
 };

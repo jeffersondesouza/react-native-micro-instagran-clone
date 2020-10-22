@@ -22,7 +22,23 @@ const theme = {
   colors: {
     ...DefaultTheme.colors,
     primary: '#22326E',
-    accent: 'yellow',
+    accent: '#ffc408',
+    third: '#ff6202',
+    forthy: '#18c64e',
+    background: 'white'
+/*       primary: string;
+        background: string;
+        surface: string;
+        accent: string;
+        error: string;
+        text: string;
+        onSurface: string;
+        onBackground: string;
+        disabled: string;
+        placeholder: string;
+        backdrop: string;
+        notification: string;
+         */
   },
   fonts: configureFonts(fontConfig),
 };
