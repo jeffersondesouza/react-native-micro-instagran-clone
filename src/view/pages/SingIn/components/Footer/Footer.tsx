@@ -11,13 +11,18 @@ const style = StyleSheet.create({
   },
   ctaLink: {
     marginLeft: 5,
-    color: "#ff6202",
+    color: "#18c64e",
   },
   link: {
     color: "blue",
   },
   text: {
     color: "#686868",
+  },
+  separator: {
+    color: "#686868",
+    marginBottom: 10,
+    marginTop: 10,
   },
 });
 
@@ -30,7 +35,7 @@ const Footer = () => {
           <Text style={style.ctaLink}>Cadastre-se</Text>
         </TouchableOpacity>
       </View>
-      <Text style={style.text}>ou</Text>
+      <Text style={style.separator}>ou</Text>
       <View >
         <TouchableOpacity>
           <Text style={style.link}>Acesse sem cadastro</Text>
